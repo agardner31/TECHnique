@@ -1,0 +1,32 @@
+%(file lost when my computer broke. This is all that was recovered)
+%@author Anna Gardner
+%@version 2.0
+%This MATLAB script analyzes input files from the body sensors (gyroscopes and IMU NOTCH proprietary sensors) we had, translates that data into graphs which then compare multiple 
+%important points to determine quality of squat with respect to proper body angles and timing.
+
+[...]
+  fileName - 'in range.xlsx';
+elseif strcmp(fileName, 'squat2')
+    fileName = 'Too Far Forward ex copy.xlsx';
+else fileName = 'Not far enough copy.xlsx';
+
+end
+[num, txt, raw] = xlsread(fileName);
+%timesInd = strcmp(txt(1,:), 'Time[s]');
+%anglesInd = strcmp(txt(1,:), 'Angle');
+xs = num(:,1);
+xs = xs - xs(1);
+ys = num (:,2);
+plot(xs,ys,'k-')
+title('Squat Graph');
+xlabel('Times');
+ylabel('Angles');
+hold on
+yMax = max(ys);
+xInd = ys == yMax;
+xMax = xs(xInd);
+xMax = xMax(1);
+if yMax < 62 & yMax > 54
+    colorBoi = 'go';
+    
+[...]
