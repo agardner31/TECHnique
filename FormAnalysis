@@ -1,4 +1,4 @@
-%(file lost when my computer broke. This is all that was recovered)
+%(file lost. This is all that was recovered)
 %@author Anna Gardner
 %@version 2.0
 %This MATLAB script analyzes input files from the body sensors (gyroscopes and IMU NOTCH proprietary sensors) we had, translates that data into graphs which then compare multiple 
@@ -27,6 +27,6 @@ xInd = ys == yMax;
 xMax = xs(xInd);
 xMax = xMax(1);
 if yMax < 62 & yMax > 54
-    colorBoi = 'go';
+    color = 'go';
     
 [...]
